@@ -33,7 +33,8 @@ public class TestTask4 {
 	public static void setUp() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments(new String[] { "--no-sandbox", "--headless", "--disable-dev-shm-usage" });
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-dev-shm-usage");
 		WebDriverManager.chromedriver().setup();
 		userCreationDriver = new ChromeDriver(options);
 		createUser();
