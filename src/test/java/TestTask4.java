@@ -33,7 +33,7 @@ public class TestTask4 {
 	public static void setUp() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments(new String[] { "--no-sandbox" });
+		options.addArguments(new String[] { "--remote-debugging-pipe" });
 		WebDriverManager.chromedriver().setup();
 		userCreationDriver = new ChromeDriver(options);
 		createUser();
