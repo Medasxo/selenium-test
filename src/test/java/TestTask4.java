@@ -32,20 +32,19 @@ public class TestTask4 {
 	@BeforeClass
 	public static void setUp() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();
-		options.setBinary("/usr/bin/chromedriver");
-		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage");
-		options.addArguments("--remote-debugging-pipe");
-		options.addArguments("--headless");
+		options.setBinary("/usr/bin/google-chrome-stable");
+		
+		
 		WebDriverManager.chromedriver().setup();
 		userCreationDriver = new ChromeDriver(options);
 		createUser();
 	}
 
-
 	@Test
 	public void test1() throws InterruptedException {
-		testDriver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		options.setBinary("/usr/bin/google-chrome-stable");
+		testDriver = new ChromeDriver(options);
 		addToCartProducts("data1.txt");
 		checkout();
 		fillAddress();
@@ -55,7 +54,9 @@ public class TestTask4 {
 
 	@Test
 	public void test2() throws InterruptedException {
-		testDriver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		options.setBinary("/usr/bin/google-chrome-stable");
+		testDriver = new ChromeDriver(options);
 		addToCartProducts("data2.txt");
 		checkout();
 		endCheckout();
