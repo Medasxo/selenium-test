@@ -32,6 +32,7 @@ public class TestTask4 {
 	@BeforeClass
 	public static void setUp() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();
+		options.setBinary("/usr/bin/chromedriver");
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
 		options.addArguments("--remote-debugging-pipe");
