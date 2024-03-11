@@ -34,6 +34,7 @@ public class TestTask4 {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
+		options.addArguments("--remote-debugging-pipe");
 		options.addArguments("--headless");
 		WebDriverManager.chromedriver().setup();
 		userCreationDriver = new ChromeDriver(options);
